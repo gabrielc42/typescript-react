@@ -81,7 +81,10 @@ const App = () => {
 
     return (
         <div>
-            <CodeEditor/>
+            <CodeEditor 
+            initialValue="console.log('<textarea> \n hi, this is a textarea built with iframe :) \n </textarea>')" 
+            onChange={(value) => setInput(value)}
+            />
             <textarea
                 value={input}
                 onChange={e => setInput(e.target.value)}>
