@@ -7,6 +7,7 @@ import { fetchPlugin } from './plugins/fetch-plugin';
 
 const App = () => {
     const ref = useRef<any>();
+    const iframe = useRef<any>();
     const [input, setInput] = useState('');
     const [code, setCode] = useState('');
 
@@ -45,8 +46,30 @@ const App = () => {
         // });
 
         // setCode(result.code);
-        setCode(result.outputFiles[0].text);
+        // setCode(result.outputFiles[0].text);
+
+        // try {
+        //     eval(result.outputFiles[0].text);
+        // } catch (err) {
+        //     alert(err);
+        // }
+
+        iframe.current.contentWindow.postMessage(result.outputFiles[0].text, '*');
     };
+
+    const html = `
+        <html>
+            <head></head>
+            <body>
+                <div id="root"></div>
+                <script>
+                    window.addEventListener('message', (event) => {
+                        eval(event.data);
+                    }, false);
+                </script>
+            </body>
+        </html>
+    `;
 
     return <div>
         <textarea
@@ -57,8 +80,12 @@ const App = () => {
             <button onClick={onClick}>Submit</button>
         </div>
         <pre>{code}</pre>
+        <iframe ref={iframe} sandbox="allow-scripts" srcDoc={html} />
     </div>
 };
+
+// const html = `
+// <h1>Local HTML doc</h1>`;
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
