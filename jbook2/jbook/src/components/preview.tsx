@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 interface PreviewProps {
-  code: string;
+    code: string;
 }
 
 const html = `
@@ -25,19 +25,19 @@ const html = `
     `;
 
 const Preview: React.FC<PreviewProps> = ({ code }) => {
-  const iframe = useRef<any>();
+    const iframe = useRef<any>();
 
-  useEffect(() => {
-    iframe.current.srcdoc = html;
-    iframe.current.contentWindow.postMessage(code, '*');
+    useEffect(() => {
+        iframe.current.srcdoc = html;
+        iframe.current.contentWindow.postMessage(code, '*');
 
-  }, [code]);
+    }, [code]);
 
-  return <iframe
-    title="preview"
-    ref={iframe}
-    sandbox="allow-scripts"
-    srcDoc={html} />
+    return <iframe
+        title="preview"
+        ref={iframe}
+        sandbox="allow-scripts"
+        srcDoc={html} />
 };
 
 export default Preview;
