@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/react-resizable": "3.0.2",
+    "react-resizable": "3.0.4"
+  }
+}
