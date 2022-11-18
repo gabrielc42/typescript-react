@@ -1,3 +1,5 @@
+## IF CANNOT RUN ADD: $env:NODE_OPTIONS="--openssl-legacy-provider" TO TERMINAL
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
