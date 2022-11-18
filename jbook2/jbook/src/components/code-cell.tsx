@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CodeEditor from './code-editor';
 import Preview from './preview';
 import bundle from '../bundler';
@@ -17,36 +17,51 @@ const CodeCell = () => {
   //     startService();
   // }, []);
 
-  const onClick = async () => {
-    const output = await bundle(input);
-    // if (!ref.current) {
-    //     return;
-    // }
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      const output = await bundle(input);
+      setCode(output);
 
-    // const result = 
+    }, 2000);
 
-    // const result = await ref.current.transform(input, {
-    //     loader: 'jsx',
-    //     target: 'es2015'
-    // });
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [input]);
 
-    // setCode(result.code);
-    setCode(output);
+  // const onClick = async () => {
+  // const output = await bundle(input);
+  // if (!ref.current) {
+  //     return;
+  // }
 
-    // try {
-    //     eval(result.outputFiles[0].text);
-    // } catch (err) {
-    //     alert(err);
-    // }
-  };
+  // const result = 
+
+  // const result = await ref.current.transform(input, {
+  //     loader: 'jsx',
+  //     target: 'es2015'
+  // });
+
+  // setCode(result.code);
+  // setCode(output);
+
+  // try {
+  //     eval(result.outputFiles[0].text);
+  // } catch (err) {
+  //     alert(err);
+  // }
+  // };
 
   return (
     <Resizable direction='vertical'>
       <div style={{ height: '100%', display: 'flex', flexDirection: 'row' }}>
-        <CodeEditor
-          initialValue="console.log('hi');"
-          onChange={(value) => setInput(value)}
-        />
+        <Resizable direction='horizontal'>
+
+          <CodeEditor
+            initialValue="console.log('hi');"
+            onChange={(value) => setInput(value)}
+          />
+        </Resizable>
         {/* <div>
           <button onClick={onClick}>Submit</button>
         </div> */}
