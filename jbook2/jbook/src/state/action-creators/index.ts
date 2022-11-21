@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 import { ActionType } from '../action-types';
-import { Action, UpdateCellAction, DeleteCellAction, MoveCellAction, InsertCellAfterAction, Direction, BundleStartAction, BundleCompleteAction } from '../actions';
+import { Action, UpdateCellAction, DeleteCellAction, MoveCellAction, InsertCellAfterAction, Direction } from '../actions';
 import { CellTypes } from '../cell';
 import bundle from '../../bundler';
 
