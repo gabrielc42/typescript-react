@@ -1,5 +1,8 @@
 ## IF CANNOT RUN ADD: $env:NODE_OPTIONS="--openssl-legacy-provider" TO TERMINAL
 
+## IF PRETTIER/PARSER NOT FOUND INSTALL: npm install prettier@types/prettier --legacy-peer-deps
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
