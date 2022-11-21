@@ -2,6 +2,7 @@
 
 ## IF PRETTIER/PARSER NOT FOUND INSTALL: npm install prettier@types/prettier --legacy-peer-deps
 
+## IF BULMASWATCH NOT FOUND INSTALL: npm install bulmaswatch --legacy-peer-deps
 
 # Getting Started with Create React App
 
