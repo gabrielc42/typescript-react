@@ -1,3 +1,4 @@
+import './code-cell.css';
 import { useEffect } from 'react';
 import CodeEditor from './code-editor';
 import Preview from './preview';
@@ -14,6 +15,37 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
 
   const { updateCell, createBundle } = useActions();
   const bundle = useTypedSelector((state) => state.bundles[cell.id]);
+  const cumulativeCode = useTypedSelector((state) => {
+    const { data, order } = state.cells;
+    const orderedCells = order.map((id) => data[id]);
+
+    const cumulativeCode = [
+      `
+      import _React from 'react';
+      import _ReactDOM from 'react-dom';
+        const show = (value) => {
+          const root = document.querySelector('#root');
+          if (typeof value === 'object') {
+            if (value.$$typeof && value.props) {
+              _ReactDOM.render(value, root);
+            }
+            root.innerHTML = JSON.stringify(value);
+          } else {
+            root.innerHTML = value;
+          }
+        };
+      `
+    ];
+    for (let c of orderedCells) {
+      if (c.type === 'code') {
+        cumulativeCode.push(c.content);
+      }
+      if (c.id === cell.id) {
+        break;
+      }
+    }
+    return cumulativeCode;
+  });
   // const [input, setInput] = useState('');
   // const [err, setErr] = useState('');
   // const [code, setCode] = useState('');
@@ -27,17 +59,22 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   // }, []);
 
   useEffect(() => {
+    if (!bundle) {
+      createBundle(cell.id, cumulativeCode.join('\n'));
+      return;
+    }
     const timer = setTimeout(async () => {
       // const output = await bundle(cell.content);
       // setCode(output.code);
       // setErr(output.err);
-      createBundle(cell.id, cell.content)
+      createBundle(cell.id, cumulativeCode.join('\n'));
     }, 2000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [cell.content, cell.id, createBundle]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cumulativeCode.join('\n'), cell.id, createBundle]);
 
   // const onClick = async () => {
   // const output = await bundle(input);
@@ -72,12 +109,23 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
             onChange={(value) => updateCell(cell.id, value)}
           />
         </Resizable>
-        {/* <div>
+        <div className="progress-wrapper">
+          {/* <div>
           <button onClick={onClick}>Submit</button>
         </div> */}
-        {bundle && <Preview
-          code={bundle.code}
-          err={bundle.err} />}
+          {
+            !bundle || bundle.loading
+              ?
+              <div className="progress-cover">
+                <progress className="progress is-small is-primary" max="100">
+                  Loading
+                </progress>
+              </div>
+              : <Preview
+                code={bundle.code}
+                err={bundle.err} />
+          }
+        </div>
       </div>
     </Resizable>
   )
