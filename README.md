@@ -4,10 +4,11 @@ notable:
   - typescript
   - redux
   - lerna
-  - 
  
 includes: 
   - code editor web app similar to codepen, in progress
+    - working with various packages
+    - custom scripts
   - a package search web app built with React-Redux
   - typescript parent/child working practice and template
 
