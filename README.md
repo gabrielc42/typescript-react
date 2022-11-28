@@ -1,4 +1,11 @@
 ﻿# typescript-react
+notable:
+  - react
+  - typescript
+  - redux
+  - lerna
+  - 
+ 
 includes: 
   - code editor web app similar to codepen, in progress
   - a package search web app built with React-Redux
