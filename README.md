@@ -16,3 +16,4 @@ biggest challenges:
 
   - learning typescript throughout project
   - project breaking moments with 3rd party installations & directories, react/esbuild installation issues followed
+  - not doing 'lerna add' rather than npm installs post-lerna, thus requiring a manual rebase of the project (rather than the labyrinth of manuevering node_modules and reinstalling npm installs with lerna at that point)
