@@ -15,4 +15,4 @@ includes:
 biggest challenges:
 
   - learning typescript throughout project
-  - project breaking moment with 3rd party installations, react/esbuild installation issues followed
+  - project breaking moments with 3rd party installations & directories, react/esbuild installation issues followed
