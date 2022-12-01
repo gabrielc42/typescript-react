@@ -5,5 +5,5 @@ export const serve = (port: number, filename: string, dir: string) => {
 
   app.listen(port, () => {
     console.log('Listening on port ', port);
-  })
+  });
 };
