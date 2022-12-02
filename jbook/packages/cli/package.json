@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "jsnote-gdc",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^9.4.1",
-    "local-api": "^1.0.0"
+    "@jsnote-gdc/local-api": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",

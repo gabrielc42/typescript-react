@@ -1,5 +1,5 @@
 {
-  "name": "local-client",
+  "name": "@jsnote-gdc/local-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
