@@ -1,8 +1,13 @@
 {
   "name": "@jsnote-gdc/local-client",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "build"
+  ],
+  "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@monaco-editor/react": "3.7.5",
     "@testing-library/jest-dom": "^5.16.5",
@@ -28,6 +33,7 @@
     "react-draggable": "^4.4.5",
     "react-redux": "^8.0.5",
     "react-resizable": "^3.0.4",
+    "@types/react-resizable": "^3.0.3",
     "react-scripts": "5.0.1",
     "redux": "4.2.0",
     "redux-thunk": "2.3.0",
@@ -57,8 +63,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react-resizable": "^3.0.3"
   }
 }
