@@ -1,6 +1,6 @@
 {
   "name": "jsnote-gdc",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "bin": "dist/index.js",
   "publishConfig": {
@@ -18,10 +18,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@jsnote-gdc/local-client": "^1.0.0"
+    "@jsnote-gdc/local-client": "^2.0.0"
   },
   "devDependencies": {
-    "@jsnote-gdc/local-api": "^1.0.0",
+    "@jsnote-gdc/local-api": "^2.0.0",
     "@types/node": "^18.11.9",
     "commander": "^9.4.1",
     "esbuild": "0.8.26",
