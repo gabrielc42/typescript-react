@@ -1,4 +1,3 @@
-# switch to branch 'gratuitamente' for all code
 
 # run npx jsbook-gdc@2.0.0 on a terminal :)
 
