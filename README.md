@@ -1,4 +1,8 @@
-﻿# typescript-react
+# switch to branch 'gratuitamente' for all code
+
+# run npx jsbook-gdc@2.0.0 on a terminal :)
+
+# typescript-react
 notable:
   - react
   - typescript
@@ -25,3 +29,4 @@ biggest challenges:
   - project breaking moments with 3rd party installations & directories, react/esbuild installation issues followed
   - not doing 'lerna add' rather than npm installs post-lerna, thus requiring a manual rebase of the project (rather than the labyrinth of manuevering node_modules and reinstalling npm installs with lerna at that point)
   - correct configurations for publishing!
+  - another project breaking moment attempting to clean files and folder organization
