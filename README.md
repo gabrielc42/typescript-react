@@ -9,6 +9,11 @@ notable:
   - lerna
   - npm published
 
+could do this for any missing node modules (scope for specific folders/modules):
+
+lerna add <package>[@version] [--dev] [--exact] [--peer]
+
+lerna add module-1 --scope=module-2
 
 includes: 
   - jsbook-gdc 2.0.0 // code editor web app similar to codepen
