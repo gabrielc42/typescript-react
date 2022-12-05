@@ -1,0 +1,30 @@
+{
+  "name": "jsnote-gdc",
+  "version": "2.0.0",
+  "description": "",
+  "bin": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\"",
+    "start": "tsc --watch --preserveWatchOutput",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@jsnote-gdc/local-client": "^2.0.0"
+  },
+  "devDependencies": {
+    "@jsnote-gdc/local-api": "^2.0.0",
+    "@types/node": "^18.11.9",
+    "commander": "9.4.1",
+    "esbuild": "0.15.18",
+    "typescript": "4.9.3"
+  }
+}

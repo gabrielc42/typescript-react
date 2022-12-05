@@ -3,7 +3,6 @@ import './action-bar.css';
 
 interface ActionBarProps {
   id: string;
-
 }
 
 const ActionBar: React.FC<ActionBarProps> = ({ id }) => {

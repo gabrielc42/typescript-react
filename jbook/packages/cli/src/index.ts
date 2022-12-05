@@ -1,7 +1,10 @@
-#!/usr/bin/env node
 import { program } from 'commander';
 import { serveCommand } from './commands/serve';
+// import serve from 'local-api';
 
-program.addCommand(serveCommand);
+// serve();
+
+program
+  .addCommand(serveCommand);
 
 program.parse(process.argv);

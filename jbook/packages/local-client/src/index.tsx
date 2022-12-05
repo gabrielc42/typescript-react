@@ -19,7 +19,7 @@ const App = () => {
                 {/* <CodeCell /> */}
             </div>
         </Provider>
-    )
+    );
 };
 
 const root = ReactDOM.createRoot(
