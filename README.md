@@ -1,5 +1,5 @@
 
-# run npx jsbook-gdc@2.0.0 on a terminal :)
+# run npx jsbook-gdc@2.0.0 on a terminal :) (some persisting errors)
 
 # typescript-react
 notable:
