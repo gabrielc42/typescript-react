@@ -1,0 +1,43 @@
+quick demo of react/typescript project
+similar to codepen or a code playground
+published to npm, npx jsnote-gdc@2.0.0 serve
+
+- be sure to copy the folders that include node_modules for development
+
+
+lerna bootstrap
+
+code render example:
+document.querySelector('#root').innerHTML = 'asdf';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+const Container = () => {
+  return <h1>Hi there</h1>;
+};
+show(<Container />); // Add the <> around App
+
+all installations:
+
+could do this for missing node modules:
+
+lerna add <package>[@version] [--dev] [--exact] [--peer]
+
+lerna add module-1 --scope=module-2
+
+--legacy-peer-deps
+
+
+- react
+- react-dom
+- react-scripts
+- redux
+- axios
+- prettier
+- babel
+- monaco
+- typescript
+- bulmaswatch
+- esbuild-wasm
+- immer
+- localforage

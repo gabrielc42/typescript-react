@@ -24,6 +24,7 @@ const Counter = () => {
 
 //display any variable or React Component by calling 'show'
 show(<Counter/>);`;
+
     const editorRef = useRef<any>();
     const onEditorDidMount: EditorDidMount = (getValue, monacoEditor) => {
         editorRef.current = monacoEditor;
