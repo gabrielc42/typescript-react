@@ -1,0 +1,2 @@
+(self.webpackChunk_jsnote_gdc_local_client=self.webpackChunk_jsnote_gdc_local_client||[]).push([[41822],{41822:function(){!function(e){var n=e.util.clone(e.languages.typescript);e.languages.tsx=e.languages.extend("jsx",n);var a=e.languages.tsx.tag;a.pattern=RegExp("(^|[^\\w$]|(?=</))(?:"+a.pattern.source+")",a.pattern.flags),a.lookbehind=!0}(Prism)}}]);
+//# sourceMappingURL=41822.8d94b11f.chunk.js.map
