@@ -1,5 +1,8 @@
 
 # run npx jsbook-gdc@2.0.0 on a terminal :) (some persisting errors)
+could do this for any missing node modules (scope for specific folders/modules):
+- lerna add <package>[@version] [--dev] [--exact] [--peer]
+- lerna add module-1 --scope=module-2
 
 # typescript-react
 notable:
@@ -9,22 +12,15 @@ notable:
   - lerna
   - npm published
 
-could do this for any missing node modules (scope for specific folders/modules):
-
-lerna add <package>[@version] [--dev] [--exact] [--peer]
-
-lerna add module-1 --scope=module-2
-
 includes: 
   - jsbook-gdc 2.0.0 // code editor web app similar to codepen
     - working with various packages
     - custom scripts
-    - additional things in progress
     
   - a package search web app built with React-Redux
   
   - typescript parent/child working practice and template
-    - typescript course in progress!
+    - typescript course
 
 
 biggest challenges:
