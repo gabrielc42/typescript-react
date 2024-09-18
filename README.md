@@ -1,5 +1,5 @@
 
-# run npx jsbook-gdc@2.0.0 on a terminal :) (some persisting errors)
+# (was runnable via npx jsbook-gdc@2.0.0 on a terminal :) , some persisting errors and time has withered this project down)
 could do this for any missing node modules (scope for specific folders/modules):
 - lerna add <package>[@version] [--dev] [--exact] [--peer]
 - lerna add module-1 --scope=module-2
